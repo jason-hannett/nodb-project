@@ -42,9 +42,8 @@ class House extends Component{
            
                 <div className="background-image">
                     <div className='input-container'>
-                    {/* <input onChange={e => this.inputHandler(e)} placeholder='house' value={this.state.house}/> */}
                     <input className='input-one' onChange={e => this.inputHandler(e)} placeholder='name' value={this.state.name}/>
-                    <button className='button' src={'https://banner2.cleanpng.com/20180508/erw/kisspng-sorting-hat-download-computer-icons-5af1c2970265a7.7249628115257934310098.jpg'} 
+                    <button className='button' 
                      onClick={this.firePost}>Sort</button>
                     </div>
                     <div className="list-container">

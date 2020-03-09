@@ -31,6 +31,7 @@ class Wizards extends Component{
         this.setState({
             updateName: e.target.value
         })
+        
      }
 
 
@@ -38,15 +39,15 @@ class Wizards extends Component{
     render(){
         console.log(this.props)
         
-        const {updateWizard, removeWizard} = this.props
+        const {removeWizard} = this.props
         return(
             <div>
                 <div className='edit-inputs'> 
                     {this.state.isEditing
                     ?
                     (
-                    <div>
-                        <input onChange={e => this.inputHandler(e)} placeholder="name" value={this.props.name}/>
+                    <div className='sorted-style'>
+                        <input onChange={e => this.inputHandler(e)} placeholder="name..." value={this.props.name}/>
                         <button className="button" onClick={() => {
                             this.editHandler()
                         }}>Save</button> 

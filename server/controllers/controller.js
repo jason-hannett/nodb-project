@@ -16,15 +16,9 @@ module.exports = {
 
    updateWizard: (req, res) => {
      let {id} = req.params
-     let wizardObj = wizardsArray.find(wizard => +id === wizard.id)
-     wizardObj = {
-         id: wizardObj.id,
-         name: req.body.name || wizardObj.name,
-         image: req.body.image || wizardObj.image
-     }
-     console.log(wizardObj)
-     let index = wizardsArray.findIndex(wizard => wizard.id === wizardObj.id);
-     wizardsArray.splice(index, 1, wizardObj)
+     const {name} = req.body
+     let index = wizardsArray.findIndex(wizard => wizard.id === +id)
+     wizardsArray[index].name = name
      res.status(200).send(wizardsArray)
    },
 

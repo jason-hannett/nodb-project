@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import Header from './Components/Header'
 import House from './Components/House'
+import Footer from './Components/Footer'
 // import Wizards from './Components/Wizards'
 import axios from 'axios'
 import './App.css';
+// import { response } from 'express';
 
 class App extends Component {
 
@@ -31,6 +33,9 @@ class App extends Component {
     .then(response => {
         this.setState({wizards: response.data})
     })
+    .catch(res => {
+      res.status(500).send(console.log('error adding'))
+    })
     
 }
 
@@ -39,6 +44,9 @@ class App extends Component {
     axios.put(`/api/wizards/${id}`, {name: newName}) 
     .then(response => {
       this.setState({wizards: response.data})
+    })
+    .catch(res => {
+      res.status(500).send(console.log('error updating'))
     })
   }
 
@@ -59,6 +67,7 @@ class App extends Component {
               wizards={this.state.wizards}
               updateWizard={this.updateWizard}
               removeWizard={this.removeWizard}/>
+              <Footer/>
         
 
       </div>

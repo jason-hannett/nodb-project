@@ -88,6 +88,22 @@ header {
   font-size: 30px;
 }
 
+footer{
+
+  height: 50px;
+  background-color: black;
+  font-family: 'Caladea';
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+footer:hover {
+  color: white;
+}
+
 
 
 
